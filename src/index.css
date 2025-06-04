@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+body {
+    @apply w-[90%] mx-auto font-sans leading-loose
+}
+
+.navlist li {
+    @apply px-2 font-normal transition-all duration-800 ease-in-out
+}
+
+.navlist li:active {
+    border-bottom: 2px solid black;  
+}
+
+.slider {
+  border-radius: 20px; /* smooth corners */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* soft shadow */
+}
+
+.footer-nav li:active {
+    border-bottom: 2px solid black;  
+}
+
+.portfolio div img {
+    @apply w-full h-full 
+}
+
+.portfolio div:hover {
+    @apply scale-105
+}
+
+.blog video{
+    @apply lg:w-[50%] mb-5
+}
+
+.story-form input{
+@apply p-3
+}
