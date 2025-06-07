@@ -8,6 +8,7 @@ import Portfolio from './pages/Portfolio.jsx'
 import Footer from './components/Footer.jsx'
 import Blog from './pages/Blog.jsx'
 import About from './pages/About.jsx'
+import Login from './pages/Login.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -19,6 +20,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer/>
     </BrowserRouter>

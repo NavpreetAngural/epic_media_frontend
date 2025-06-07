@@ -33,10 +33,10 @@ const Navbar = () => {
 
         {/* Desktop "Book Now" */}
         <Link
-          to="/book"
-          className=' hidden md:inline-block text-black  font-normal  p-1 hover:text-[#F25F4F] hover:border hover:border-[#F25F4F]  '
+          to="/login"
+          className=' hidden md:inline-block text-black  font-normal  px-3 hover:text-[#F25F4F] hover:border hover:border-[#F25F4F]  '
         >
-          Book Now
+          Login
         </Link>
 
         {/* Hamburger Menu (Mobile) */}
@@ -59,11 +59,11 @@ const Navbar = () => {
             <li><Link to="/contact" onClick={toggleMenu}>Contact</Link></li>
           </ul>
           <Link
-            to="/book"
-            className='text-white font-normal p-2 bg-[#F25F4F] rounded-full'
+            to="/login"
+            className='text-white font-normal px-3 bg-[#F25F4F] rounded-full'
             onClick={toggleMenu}
           >
-            Book Now
+            Login
           </Link>
         </div>
       )}
