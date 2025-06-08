@@ -42,10 +42,6 @@ const Login = () => {
             <Input.Password placeholder='********' />
           </Form.Item>
 
-          <Form.Item name="remember" valuePropName="checked" label={null}>
-            <Checkbox>Remember me</Checkbox>
-          </Form.Item>
-
           <Form.Item label={null} wrapperCol={{ span: 24 }}>
             <Button type="primary" htmlType="submit" className='w-full'>
               Login

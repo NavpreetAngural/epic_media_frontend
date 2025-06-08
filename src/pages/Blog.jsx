@@ -1,11 +1,4 @@
 import React from 'react'
-import kashmir_video from '../assets/videos/kashmir_video.mp4'
-import pre_wedding_video from '../assets/videos/pre_wedding_video.mp4'
-import short_movie_video from '../assets/videos/short_movie_video.mp4'
-import song_video from '../assets/videos/song_video.mp4'
-import spiritual_video from '../assets/videos/spiritual_video.mp4'
-import BTS_video from '../assets/videos/BTS_video.mp4'
-import restuarant_video from '../assets/videos/restuarant_video.mp4'
 
 const Blog = () => {
     return (
