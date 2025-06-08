@@ -13,7 +13,6 @@ import CardActionArea from '@mui/material/CardActionArea';
 import pre_wedding_thumbnail from '../assets/images/pre_wedding_thumbnail.jpg'
 import short_movie from '../assets/images/short_movie.jpg'
 import travel from '../assets/images/travel.jpg'
-import manali_video from '../assets/videos/manali_video.mp4'
 
 const Home = () => {
 
@@ -37,7 +36,7 @@ const Home = () => {
         playsInline
         controls
       >
-        <source src={manali_video} type="video/mp4" />
+        <source src="https://res.cloudinary.com/dvmqgxoan/video/upload/v1749404328/edehlwnbwssoy0qit2g0.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       {/* About and team */}

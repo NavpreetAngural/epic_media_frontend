@@ -23,7 +23,7 @@ const Blog = () => {
                     loop
                     playsInline
                     controls className=' w-full m-auto flex flex-col justify-center items-center pt-0'>
-                    <source src={kashmir_video} type="video/mp4" />
+                    <source src="https://res.cloudinary.com/dvmqgxoan/video/upload/v1749404329/juwxsdrcfql78cx8liq3.mp4" type="video/mp4" />
                 </video>
             </div>
             <div className='second w-full flex flex-col lg:flex lg:flex-row my-5'>
@@ -31,11 +31,11 @@ const Blog = () => {
                     loop
                     playsInline
                     controls className=' w-full m-auto flex flex-col justify-center items-center pt-0'>
-                    <source src={pre_wedding_video} type="video/mp4" />
+                    <source src="https://res.cloudinary.com/dvmqgxoan/video/upload/v1749404274/ozppyovsspf6pi86gqfs.mp4" type="video/mp4" />
                 </video>
                 <div className='w-full lg:w-1/2 flex flex-col justify-center items-center p-5 pt-0'>
                     <h1 className='text-2xl font-bold'>Pre Weddings</h1>
-                    <p className='pt-5 text-justify text-justify' >At EPIC MEDIA, pre-wedding shoots are more than just photos — they’re your love story in motion. We craft cinematic moments that reflect your bond, your vibe, and your journey together.
+                    <p className='pt-5 text-justify' >At EPIC MEDIA, pre-wedding shoots are more than just photos — they’re your love story in motion. We craft cinematic moments that reflect your bond, your vibe, and your journey together.
                         From dreamy mountain backdrops to candid city vibes, we’ve captured it all — with heart, creativity, and a touch of magic. Every frame is designed to feel real, timeless, and uniquely you.</p>
                 </div>
             </div>
@@ -49,7 +49,7 @@ const Blog = () => {
                     loop
                     playsInline
                     controls className=' w-full m-auto flex flex-col justify-center items-center pt-0'>
-                    <source src={short_movie_video} type="video/mp4" />
+                    <source src="https://res.cloudinary.com/dvmqgxoan/video/upload/v1749404214/wbw5zduhevim8iw1rwgy.mp4" type="video/mp4" />
                 </video>
             </div>
             <div className='forth w-full flex flex-col lg:flex lg:flex-row my-5'>
@@ -57,7 +57,7 @@ const Blog = () => {
                     loop
                     playsInline
                     controls className='h-[200px] lg:h-[300px] w-full m-auto flex flex-col justify-center items-center pt-0'>
-                    <source src={song_video} type="video/mp4" />
+                    <source src="https://res.cloudinary.com/dvmqgxoan/video/upload/v1749404220/ks4racjbtpfp2jim4luy.mp4" type="video/mp4" />
                 </video>
                 <div className='w-full lg:w-1/2 flex flex-col justify-center items-center p-5 pt-0'>
                     <h1 className='text-2xl font-bold'> Songs</h1>
@@ -75,7 +75,7 @@ const Blog = () => {
                     loop
                     playsInline
                     controls className=' w-full m-auto flex flex-col justify-center items-center pt-0'>
-                    <source src={spiritual_video} type="video/mp4" />
+                    <source src="https://res.cloudinary.com/dvmqgxoan/video/upload/v1749404241/jjf2qhzuq6jy5ohrxmev.mp4" type="video/mp4" />
                 </video>
             </div>
             <div className='sixth w-full flex flex-col lg:flex lg:flex-row my-5'>
@@ -83,7 +83,7 @@ const Blog = () => {
                     loop
                     playsInline
                     controls className=' w-full m-auto flex flex-col justify-center items-center pt-0'>
-                    <source src={BTS_video} type="video/mp4" />
+                    <source src="https://res.cloudinary.com/dvmqgxoan/video/upload/v1749404267/on8azwsxlcqzqdcdihzc.mp4" type="video/mp4" />
                 </video>
                 <div className='w-full lg:w-1/2 flex flex-col justify-center items-center p-5 pt-0'>
                     <h1 className='text-2xl font-bold'> Behind The Scene</h1>
@@ -102,7 +102,7 @@ const Blog = () => {
                     loop
                     playsInline
                     controls className='h-[200px] lg:h-[300px] w-full m-auto flex flex-col justify-center items-center pt-0'>
-                    <source src={restuarant_video} type="video/mp4" />
+                    <source src="https://res.cloudinary.com/dvmqgxoan/video/upload/v1749404222/qibsufdlrpf8s7fjm1wq.mp4" type="video/mp4" />
                 </video>
             </div>
         </div>
