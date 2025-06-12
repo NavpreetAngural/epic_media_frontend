@@ -13,14 +13,22 @@ import CardActionArea from '@mui/material/CardActionArea';
 import pre_wedding_thumbnail from '../assets/images/pre_wedding_thumbnail.jpg'
 import short_movie from '../assets/images/short_movie.jpg'
 import travel from '../assets/images/travel.jpg'
+import { useContext } from 'react';
+import { UserDataContext } from '../components/Context/USerContext';
 
 const Home = () => {
+
+
+  const [user] = useContext(UserDataContext)
 
   useEffect(() => {
     AOS.init({
       duration: 2000
     })
+
   }, [])
+
+  
 
   const card_images = [
     { title: "Pre-Wedding", image: pre_wedding_thumbnail },
@@ -39,6 +47,7 @@ const Home = () => {
         <source src="https://res.cloudinary.com/dvmqgxoan/video/upload/v1749404328/edehlwnbwssoy0qit2g0.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+
       {/* About and team */}
       <div className='description flex flex-col lg:flex-row gap-6 p-5'>
         <div
@@ -48,16 +57,16 @@ const Home = () => {
           <h2 className='font-medium text-xl md:text-lg text-center'>
             <i>Visual Stories That Inspire — Welcome to EPIC MEDIA</i>
           </h2>
-          <p className='text-center p-4 text-base sm:text-sm leading-loose tracking-wider'>
+          <p className='text-center p-4 lg:text-base sm:text-sm leading-loose tracking-wider text-[14px]'>
             EPIC MEDIA is a creative storytelling platform born from a passion for photography, filmmaking, and travel. With a growing presence on YouTube, we bring you cinematic journeys through the mountains of Kashmir, Himachal, and Spiti, along with soulful songs, behind-the-scenes content, and captivating web series.
           </p>
           <Link to="/about" className='bg-[#F25F4F] w-[7em] mt-4 mx-auto rounded-full text-center'>
-            <button className='p-2 hover:text-white'>
+            <button className='p-2 hover:text-white text-[12px] lg:text-base'>
               About more...
             </button>
           </Link>
         </div>
-        <div className='team flex flex-col  w-full lg:w-1/2 p-5 '>
+        <div className='team flex flex-col  w-full lg:w-1/2 p-0 '>
           <h2 className='font-medium text-xl md:text-lg text-center p-5 pt-0'>
             Team
           </h2>

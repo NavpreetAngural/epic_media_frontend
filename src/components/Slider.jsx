@@ -35,7 +35,7 @@ const Slider = () => {
                 ))}
             </div>
             <Link to="/portfolio" className='bg-[#F25F4F] w-[8em] mt-[1em] mx-auto  rounded-full text-center'>
-                <button className='p-1 hover:text-white'>
+                <button className='p-1 hover:text-white text-[12px] lg:text-base'>
                     View Portfolio
                 </button>
             </Link>
