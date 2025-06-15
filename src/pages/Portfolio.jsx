@@ -7,10 +7,13 @@ import kasol from '../assets/images/kasol.jpg'
 import cup from '../assets/images/cup.jpg'
 import polu_1 from '../assets/images/polu_1.jpg'
 import snow from '../assets/images/snow.jpg'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 const Portfolio = () => {
      return (
           <>
+          <Navbar/>
                <div className='heading w-full md:w-full flex justify-center items-center h-[5em] lg:h-[10em] ' >
                     <h1 className='md:text-5xl text-4xl'><i>Portfolio</i></h1>
                </div>
@@ -70,6 +73,7 @@ const Portfolio = () => {
                          <img src="https://static.vecteezy.com/system/resources/thumbnails/023/159/892/small/generative-ai-misty-fir-forest-beautiful-landscape-in-hipster-vintage-retro-style-foggy-mountains-and-trees-photo.jpg" alt="" />
                     </div>
                </div>
+               <Footer/>
           </>
      )
 }

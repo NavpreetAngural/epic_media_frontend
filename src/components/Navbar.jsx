@@ -25,9 +25,9 @@ const Navbar = () => {
         <ul className='navlist hidden md:flex gap-10 items-center  ml-[25em]'>
           <li><NavLink to="/" >Home</NavLink></li>
           <li><NavLink to="/portfolio">Portfolio</NavLink></li>
+          <li><NavLink to="/category">Category</NavLink></li>
           <li><NavLink to="/about">About</NavLink></li>
           <li><NavLink to="/blog">Blog</NavLink></li>
-          <li><NavLink to="/testimonials">Testimonials</NavLink></li>
           <li><NavLink to="/contact">Contact</NavLink></li>
         </ul>
 

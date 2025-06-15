@@ -13,6 +13,11 @@ import Signup from './pages/signup.jsx'
 import { UserProvider } from './components/Context/USerContext.jsx'
 import { ToastContainer } from 'react-toastify'
 import { GoogleOAuthProvider } from '@react-oauth/google'
+import Category from './pages/Category.jsx'
+import CategoryDetails from './pages/CategoryDetails.jsx'
+import AddCategory from './pages/AddCategory.jsx'
+import UserProtectedRoutes from './pages/UserRoutes.jsx/UserProtectedRoutes.jsx'
+import Profile from './pages/UserRoutes.jsx/Profile.jsx'
 
 const GoogleWrapper = () => {
   return (
@@ -26,7 +31,6 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <ToastContainer />
-      <Navbar />
       <UserProvider>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -35,9 +39,14 @@ createRoot(document.getElementById('root')).render(
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<GoogleWrapper />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/addcategory" element={<AddCategory />} />
+          <Route path="/category" element={<Category />} />
+          <Route path="/category/:cName" element={<CategoryDetails />} />
+          <Route path="/user" element={<UserProtectedRoutes />}>
+            <Route path='profile' element={<Profile />} />
+          </Route>
         </Routes>
       </UserProvider>
-      <Footer />
     </BrowserRouter>
   </StrictMode>
 

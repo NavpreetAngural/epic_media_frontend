@@ -1,46 +1,54 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import monastery from '../assets/images/monastery.jpg'
-import snow from '../assets/images/snow.jpg'
-import polu_1 from '../assets/images/polu_1.jpg'
+import axios from 'axios';
+import { baseURL } from '../../config';
 
 const Slider = () => {
+    const [data, setData] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
-    const images = [
-        monastery,snow,polu_1
-    ];
+    const images_data = async () => {
+        try {
+            const res = await axios.get(`${baseURL}/category/view`);
+            setData(res.data.data);
+        } catch (err) {
+            console.log("Error fetching images", err);
+        }
+    };
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex(prev =>
-                prev === images.length - 1 ? 0 : prev + 1
-            );
-        }, 2000);
-        return () => clearInterval(interval);
+        images_data();
     }, []);
 
-    const [currentIndex, setCurrentIndex] = useState(0);
+    useEffect(() => {
+        if (data.length === 0) return;
+
+        const interval = setInterval(() => {
+            setCurrentIndex(prev => (prev === data.length - 1 ? 0 : prev + 1));
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, [data]);
 
     return (
         <div className='flex flex-col justify-center'>
-            <div className='slider group relative w-full h-[15em] lg:h-[35em] overflow-hidden mx-auto '>
-                {images.map((img, index) => (
+            <div className='slider group relative w-full h-[15em] lg:h-[35em] overflow-hidden mx-auto'>
+                {data.map((img, index) => (
                     <img
                         key={index}
-                        src={img}
+                        src={`http://localhost:3000/uploads/${img.cImage}`}
                         alt={`Slide ${index}`}
-                        className={` absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0'
-                            }`}
+                        className={`absolute  w-full h-full  transition-opacity duration-1000 ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0'}`}
                     />
                 ))}
             </div>
-            <Link to="/portfolio" className='bg-[#F25F4F] w-[8em] mt-[1em] mx-auto  rounded-full text-center'>
+            <Link to="/portfolio" className='bg-[#F25F4F] w-[8em] mt-[1em] mx-auto rounded-full text-center'>
                 <button className='p-1 hover:text-white text-[12px] lg:text-base'>
                     View Portfolio
                 </button>
             </Link>
         </div>
-    )
-}
+    );
+};
 
-export default Slider
+export default Slider;

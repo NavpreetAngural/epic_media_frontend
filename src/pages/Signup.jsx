@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Form, Input, Upload } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserDataContext } from '../components/Context/USerContext';
 import { baseURL } from '../../config';
@@ -8,9 +8,12 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 import { InboxOutlined, UploadOutlined } from '@ant-design/icons';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const Signup = () => {
-  const [user, setUser] = useContext(UserDataContext)
+  const {user, setUser} = useContext(UserDataContext)
+  const navigate = useNavigate()
 
   const onFinish = async (values) => {
 
@@ -35,6 +38,7 @@ const Signup = () => {
         {
           toast.success(res.data.msg);
           setUser(res.data.data)
+          navigate("/login")
         }
       })
       .catch((err) => {
@@ -44,6 +48,7 @@ const Signup = () => {
   };
   return (
     <>
+    <Navbar/>
       <div className='signup h-[auto]  flex justify-center items-center my-5 py-5 '>
         <div className=' py-5 lg:py-[10px] h-[auto]  lg:px-[40px] px-[20px] shadow-2xl rounded-2xl flex flex-col justify-center items-center border-t-4 border-[#F25F4F]'>
           <h1 className='text-2xl font-bold pb-5 '>Signup</h1>
@@ -119,6 +124,7 @@ const Signup = () => {
           </Form>
         </div>
       </div>
+      <Footer/>
     </>
   )
 }

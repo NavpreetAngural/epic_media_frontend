@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import 'remixicon/fonts/remixicon.css';
 
 
-const Footer = () => {
+const UserFooter = () => {
     return (
         <div className='flex flex-col p-5 h-[auto] justify-center items-center w-full lg:flex lg:flex-col lg:h-[20em] border-t  lg:mt-3'>
             <img
@@ -59,4 +59,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default UserFooter

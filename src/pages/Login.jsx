@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
@@ -6,30 +6,38 @@ import axios from 'axios';
 import { baseURL } from '../../config';
 import { toast } from 'react-toastify';
 import { useGoogleLogin } from '@react-oauth/google';
-
-
-const onFinish = (values) => {
-  axios.post(`${baseURL}/auth/login`, values)
-    .then((res) => {
-      if (res.status == 200) {
-        toast.success(res.data.msg)
-      }
-    })
-    .catch((err) => {
-      toast.error(err.response.data.msg || "something went wrong")
-    })
-};
-
+import { UserDataContext } from '../components/Context/USerContext';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const Login = () => {
+  const navigate = useNavigate()
+  const { token, setToken , user , setUser} = useContext(UserDataContext)
+  const onFinish = (values) => {
+
+    axios.post(`${baseURL}/auth/login`, values)
+      .then((res) => {
+        if (res.status == 200) {
+          toast.success(res.data.msg)
+          setToken(res.data.token);
+          setUser(res.data.data)
+          navigate("/user")
+
+        }
+      })
+      .catch((err) => {
+        toast.error(err.response.data.msg || "something went wrong")
+      })
+  };
 
   const googleLogin = useGoogleLogin({
     flow: 'auth-code',
     onSuccess: async (codeResponse) => {
       const res = await axios.post(`${baseURL}/auth/google?code=${codeResponse.code}`);
-
       toast.success(res.data.msg);
-      localStorage.setItem('token', res.data.token)
+      setUser(res.data.data)
+      setToken(res.data.token)
+      navigate("/user")
     },
     onError: (error) => console.error("Login Error", error),
     scope: 'profile email',
@@ -37,9 +45,9 @@ const Login = () => {
     prompt: 'consent'
   });
 
-
-
   return (
+    <>
+    <Navbar/>
     <div className='login h-[75vh] lg:h-[60vh] flex justify-center items-center'>
       <div className=' lg:py-[50px] h-[420px] lg:h-[350px] lg:px-[40px] px-[50px] shadow-2xl rounded-2xl flex flex-col justify-center items-center border-t-4 border-[#F25F4F]'>
         <h1 className='text-2xl font-bold lg- pb-5'>Login</h1>
@@ -88,6 +96,8 @@ const Login = () => {
         </Form>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

@@ -13,38 +13,35 @@ import CardActionArea from '@mui/material/CardActionArea';
 import pre_wedding_thumbnail from '../assets/images/pre_wedding_thumbnail.jpg'
 import short_movie from '../assets/images/short_movie.jpg'
 import travel from '../assets/images/travel.jpg'
-import { useContext } from 'react';
-import { UserDataContext } from '../components/Context/USerContext';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const Home = () => {
-
-
-  const [user] = useContext(UserDataContext)
-
   useEffect(() => {
     AOS.init({
       duration: 2000
     })
 
   }, [])
-
-  
-
   const card_images = [
-    { title: "Pre-Wedding", image: pre_wedding_thumbnail },
-    { title: "Short Movie", image: short_movie },
+    { title: "Pre Wedding", image: pre_wedding_thumbnail },
+    { title: "Short Movies", image: short_movie },
     { title: "Travel", image: travel },
   ]
 
   return (
+    <>
+    <Navbar/>
     <div className='homepage'>
       <video
         className="w-[100%] h-[100%] object-cover rounded-xl my-[10px] overflow-hidden "
         loop
         playsInline
         controls
+        muted 
+        autoPlay
       >
-        <source src="https://res.cloudinary.com/dvmqgxoan/video/upload/v1749404328/edehlwnbwssoy0qit2g0.mp4" type="video/mp4" />
+        <source src="https://res.cloudinary.com/dvmqgxoan/video/upload/v1749810450/manali_video_c7jgx3.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -90,7 +87,7 @@ const Home = () => {
         </h2>
         <div className="flex flex-wrap flex-col md:flex-row justify-center items-center gap-5 lg:gap-[80px] ">
           {card_images.map((item, index) => (
-            <Link>
+            <Link to={`/category/${item.title}`}>
               <Card data-aos="zoom-in" key={index} sx={{ maxWidth: 300, maxHeight: 350 }}>
                 <CardActionArea>
                   <CardMedia
@@ -118,10 +115,9 @@ const Home = () => {
           ))}
         </div>
       </div>
-
-
-
     </div>
+    <Footer/>
+    </>
   )
 }
 
