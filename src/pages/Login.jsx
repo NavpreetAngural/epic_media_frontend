@@ -7,9 +7,9 @@ import axios from 'axios';
 import { baseURL } from '../../config';
 import { toast } from 'react-toastify';
 import { useGoogleLogin } from '@react-oauth/google';
-import { UserDataContext } from '../components/Context/USerContext';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { UserDataContext } from '../components/Context/UserContext';
 
 const Login = () => {
   const navigate = useNavigate()
