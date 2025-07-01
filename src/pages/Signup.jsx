@@ -12,7 +12,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const Signup = () => {
-  const {user, setUser} = useContext(UserDataContext)
+  const { user, setUser } = useContext(UserDataContext)
   const navigate = useNavigate()
 
   const onFinish = async (values) => {
@@ -48,7 +48,7 @@ const Signup = () => {
   };
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <div className='signup h-[auto]  flex justify-center items-center my-5 py-5 '>
         <div className=' py-5 lg:py-[10px] h-[auto]  lg:px-[40px] px-[20px] shadow-2xl rounded-2xl flex flex-col justify-center items-center border-t-4 border-[#F25F4F]'>
           <h1 className='text-2xl font-bold pb-5 '>Signup</h1>
@@ -73,6 +73,7 @@ const Signup = () => {
             <Form.Item
               label="Email"
               name="email"
+              validateDebounce={1000}
               rules={[{ required: true, message: 'Please input your username!' }]}
             >
               <Input placeholder='your@example.com' />
@@ -124,7 +125,7 @@ const Signup = () => {
           </Form>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   )
 }

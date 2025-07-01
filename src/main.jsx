@@ -18,10 +18,13 @@ import CategoryDetails from './pages/CategoryDetails.jsx'
 import AddCategory from './pages/AddCategory.jsx'
 import UserProtectedRoutes from './pages/UserRoutes.jsx/UserProtectedRoutes.jsx'
 import Profile from './pages/UserRoutes.jsx/Profile.jsx'
+import Dashboard from './pages/UserRoutes.jsx/Dashboard.jsx'
+import AddBooking from './pages/UserRoutes.jsx/AddBooking.jsx'
+import ViewBookings from './pages/UserRoutes.jsx/ViewBookings.jsx'
 
 const GoogleWrapper = () => {
   return (
-    <GoogleOAuthProvider clientId='133980932984-j71rqmbhenna83urn91islmpp5qudk6n.apps.googleusercontent.com'>
+    <GoogleOAuthProvider clientId='31538982412-sh9fka6v5nkpp8h6e74i4u0ojcmrfvok.apps.googleusercontent.com'>
       <Login />
     </GoogleOAuthProvider>
   );
@@ -44,6 +47,11 @@ createRoot(document.getElementById('root')).render(
           <Route path="/category/:cName" element={<CategoryDetails />} />
           <Route path="/user" element={<UserProtectedRoutes />}>
             <Route path='profile' element={<Profile />} />
+            <Route path='' element={<Dashboard />} />
+            <Route path='addbooking' element={<AddBooking />} />
+            <Route path='viewbookings' element={<ViewBookings />} />
+            <Route path='category' element={<Category />} />
+            <Route path="category/:cName" element={<CategoryDetails />} />
           </Route>
         </Routes>
       </UserProvider>

@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
 const CategoryDetails = () => {
+  const token = localStorage.getItem("token")
   const { cName } = useParams()
   const [data, setData] = useState([])
 
@@ -24,7 +25,7 @@ const CategoryDetails = () => {
 
   return (
     <>
-    <Navbar/>
+    {token ? "" : <Navbar/>   }
     <div className='about flex flex-col mb-10 px-4'>
       <div className='heading w-full flex justify-center items-center h-[10em] border-y lg:border-0 mt-5'>
         <h1 className='text-3xl lg:text-5xl'><i>Photos of {cName}</i></h1>
@@ -34,7 +35,7 @@ const CategoryDetails = () => {
         {data.map((d, i) => (
           <div
             key={i}
-            className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow w-full h-[300px] flex flex-col"
+            className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow  h-[250px] w-[400px] flex flex-col"
           >
             <div className=" w-full overflow-hidden">
               <img
@@ -43,7 +44,7 @@ const CategoryDetails = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="p-4 h-[100px] flex items-center justify-center">
+            <div className="p-4 h-[50px] flex items-center justify-center">
               <h5 className="text-center font-semibold text-lg">{d.description}</h5>
             </div>
           </div>

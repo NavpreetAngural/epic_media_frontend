@@ -34,7 +34,7 @@ const Navbar = () => {
         {/* Desktop "Book Now" */}
         <Link
           to="/login"
-          className=' hidden md:inline-block text-black  font-normal  px-3 hover:text-[#F25F4F] hover:border hover:border-[#F25F4F]  '
+          className='border-2 border-white hidden md:inline-block text-black  font-normal  px-3 hover:text-[#F25F4F] hover:border-2 hover:border-[#F25F4F] hover:rounded-2xl'
         >
           Login
         </Link>
