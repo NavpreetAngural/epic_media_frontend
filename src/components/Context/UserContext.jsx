@@ -2,7 +2,7 @@ import { React, useState, createContext, useEffect } from 'react'
 
 export const UserDataContext = createContext()
 
-export const UserProvider = ({ children }) => {
+const UserProvider = ({ children }) => {
 
     const [user, setUser] = useState({
         fullName: "",
@@ -29,3 +29,5 @@ export const UserProvider = ({ children }) => {
         </>
     )
 }
+
+export default UserProvider
