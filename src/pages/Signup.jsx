@@ -19,13 +19,13 @@ const Signup = () => {
 
     const formData = new FormData()
 
-    if (values.dp && values.dp.fileList?.[0]?.originFileObj) {
-      formData.append("dp", values.dp.fileList?.[0]?.originFileObj)
+    const file = values.dp?.[0]?.originFileObj;
+    if (!file) {
+      toast.error("Please upload Profile Picture");
+      return;
     }
-    else {
-      toast.error("please upload Profile Picture")
-      return
-    }
+    formData.append("dp", file);
+
 
     formData.append("fullName", values.fullName)
     formData.append("email", values.email)
@@ -42,9 +42,10 @@ const Signup = () => {
         }
       })
       .catch((err) => {
-        console.log(err.message);
-        toast.error(err.message)
+        const errorMsg = err?.response?.data?.msg || err.message;
+        toast.error(errorMsg);
       })
+
   };
   return (
     <>
@@ -65,16 +66,15 @@ const Signup = () => {
             <Form.Item
               label="Full Name"
               name="fullName"
-              rules={[{ required: true, message: 'Please input your username!' }]}
+              rules={[{ required: true, message: 'Please input your full name!' }]}
             >
-              <Input placeholder='your@example.com' />
+              <Input placeholder='John Doe' />
             </Form.Item>
 
             <Form.Item
               label="Email"
               name="email"
-              validateDebounce={1000}
-              rules={[{ required: true, message: 'Please input your username!' }]}
+              rules={[{ required: true, type: 'email', message: 'Please enter a valid email!' }]}
             >
               <Input placeholder='your@example.com' />
             </Form.Item>
@@ -88,18 +88,18 @@ const Signup = () => {
             </Form.Item>
 
             <Form.Item
-              label="Phone No : "
+              label="Phone No"
               name="phone"
-              rules={[{ required: true, message: 'Please input your username!' }]}
+              rules={[{ required: true, message: 'Please enter your phone number!' }]}
             >
-              <Input placeholder='your@example.com' />
+              <Input placeholder='9988776655' maxLength={10} minLength={10} />
             </Form.Item>
 
             <Form.Item
               label=" Profile Picture"
               name="dp"
               valuePropName="file"
-              getValueFromEvent={(e) => e?.fileList?.[0] ? e : null}
+              getValueFromEvent={(e) => Array.isArray(e) ? e : e?.fileList}
               rules={[{ required: true, message: "Please upload Profile Picture " }]}
             >
               <Upload beforeUpload={() => false}>
@@ -109,9 +109,9 @@ const Signup = () => {
             <Form.Item
               label="City"
               name="city"
-              rules={[{ required: true, message: 'Please input your username!' }]}
+              rules={[{ required: true, message: 'Please enter your city!' }]}
             >
-              <Input placeholder='your@example.com' />
+              <Input placeholder='Mumbai' />
             </Form.Item>
 
             <Form.Item label={null} wrapperCol={{ span: 24 }}>
