@@ -39,7 +39,7 @@ const CategoryDetails = () => {
           >
             <div className=" w-full overflow-hidden">
               <img
-                src={`http://localhost:3000/uploads/${d.cImage}`}
+                src={`https://epic-media-backend.onrender.com/uploads/${d.cImage}`}
                 alt={d.description}
                 className="w-full h-full object-cover"
               />

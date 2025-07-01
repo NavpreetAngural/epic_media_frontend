@@ -36,7 +36,7 @@ const Slider = () => {
                 {data.map((img, index) => (
                     <img
                         key={index}
-                        src={`http://localhost:3000/uploads/${img.cImage}`}
+                        src={`https://epic-media-backend.onrender.com/uploads/${img.cImage}`}
                         alt={`Slide ${index}`}
                         className={`absolute  w-full h-full  transition-opacity duration-1000 ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0'}`}
                     />
