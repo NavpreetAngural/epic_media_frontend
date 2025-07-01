@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Form, Input, Upload } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
-import { UserDataContext } from '../components/Context/USerContext';
+import { UserDataContext } from '../components/Context/UserContext';
 import { baseURL } from '../../config';
 import axios from 'axios';
 import { toast } from 'react-toastify';
