@@ -20,6 +20,7 @@ import Profile from './pages/UserRoutes.jsx/Profile.jsx'
 import Dashboard from './pages/UserRoutes.jsx/Dashboard.jsx'
 import AddBooking from './pages/UserRoutes.jsx/AddBooking.jsx'
 import ViewBookings from './pages/UserRoutes.jsx/ViewBookings.jsx'
+import UserProvider from './components/Context/UserContext.jsx'
 
 const GoogleWrapper = () => {
   return (
