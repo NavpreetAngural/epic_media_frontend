@@ -106,6 +106,7 @@ const Signup = () => {
                 <Button icon={<UploadOutlined />}>Click to Upload</Button>
               </Upload>
             </Form.Item>
+            
             <Form.Item
               label="City"
               name="city"

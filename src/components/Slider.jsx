@@ -33,14 +33,35 @@ const Slider = () => {
     return (
         <div className='flex flex-col justify-center'>
             <div className='slider group relative w-full h-[15em] lg:h-[35em] overflow-hidden mx-auto'>
-                {data.map((img, index) => (
-                    <img
-                        key={index}
-                        src={`https://epic-media-backend.onrender.com/uploads/${img.cImage}`}
-                        alt={`Slide ${index}`}
-                        className={`absolute  w-full h-full  transition-opacity duration-1000 ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0'}`}
-                    />
-                ))}
+                {data.map((item, index) => {
+                    const mediaURL = `http://localhost:3000/uploads/${item.media}`;
+                    const isVideo = /\.(mp4|mov|avi|webm)$/i.test(item.media); // detect video
+
+                    return (
+                        <div
+                            key={index}
+                            className={`absolute w-full h-full transition-opacity duration-1000 ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0'
+                                }`}
+                        >
+                            {isVideo ? (
+                                <video
+                                    src={mediaURL}
+                                    className="w-full h-full object-cover"
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                />
+                            ) : (
+                                <img
+                                    src={mediaURL}
+                                    alt={`Slide ${index}`}
+                                    className="w-full h-full object-cover"
+                                />
+                            )}
+                        </div>
+                    );
+                })}
             </div>
             <Link to="/portfolio" className='bg-[#F25F4F] w-[8em] mt-[1em] mx-auto rounded-full text-center'>
                 <button className='p-1 hover:text-white text-[12px] lg:text-base'>

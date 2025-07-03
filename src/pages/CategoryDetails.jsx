@@ -25,33 +25,51 @@ const CategoryDetails = () => {
 
   return (
     <>
-    {token ? "" : <Navbar/>   }
-    <div className='about flex flex-col mb-10 px-4'>
-      <div className='heading w-full flex justify-center items-center h-[10em] border-y lg:border-0 mt-5'>
-        <h1 className='text-3xl lg:text-5xl'><i>Photos of {cName}</i></h1>
-      </div>
+      {token ? "" : <Navbar />}
+      <div className='about flex flex-col mb-10 px-4'>
+        <div className='heading w-full flex justify-center items-center h-[10em] border-y lg:border-0 mt-5'>
+          <h1 className='text-3xl lg:text-5xl'><i>Gallery of {cName}</i></h1>
+        </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
-        {data.map((d, i) => (
-          <div
-            key={i}
-            className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow  h-[250px] w-[400px] flex flex-col"
-          >
-            <div className=" w-full overflow-hidden">
-              <img
-                src={`https://epic-media-backend.onrender.com/uploads/${d.cImage}`}
-                alt={d.description}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-4 h-[50px] flex items-center justify-center">
-              <h5 className="text-center font-semibold text-lg">{d.description}</h5>
-            </div>
-          </div>
-        ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
+          {data.map((item, index) => {
+            const mediaURL = `http://localhost:3000/uploads/${item.media}`;
+            const isVideo = /\.(mp4|mov|avi|webm)$/i.test(item.media);
+
+            return (
+              <div
+                key={index}
+                className="flex flex-col w-full h-auto rounded overflow-hidden shadow-md"
+              >
+                <div className="w-full h-[200px] lg:h-[300px]">
+                  {isVideo ? (
+                    <video
+                      src={mediaURL}
+                      className="w-full h-full object-cover"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    />
+                  ) : (
+                    <img
+                      src={mediaURL}
+                      alt={`Media ${index}`}
+                      className="w-full h-full object-cover"
+                    />
+                  )}
+                </div>
+                <div className="p-2 bg-gray-100 text-xl  text-center">
+                  {item.description}
+                </div>
+              </div>
+            );
+          })}
+
+
+        </div>
       </div>
-    </div>
-    <Footer/>
+      <Footer />
     </>
   )
 }

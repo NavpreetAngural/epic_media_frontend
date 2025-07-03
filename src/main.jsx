@@ -21,6 +21,7 @@ import Dashboard from './pages/UserRoutes.jsx/Dashboard.jsx'
 import AddBooking from './pages/UserRoutes.jsx/AddBooking.jsx'
 import ViewBookings from './pages/UserRoutes.jsx/ViewBookings.jsx'
 import UserProvider from './components/Context/UserContext.jsx'
+import AddPortfolio from './pages/AddPortfolio.jsx'
 
 const GoogleWrapper = () => {
   return (
@@ -45,6 +46,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/addcategory" element={<AddCategory />} />
           <Route path="/category" element={<Category />} />
           <Route path="/category/:cName" element={<CategoryDetails />} />
+          <Route path="/addportfolio" element={<AddPortfolio />} />
           <Route path="/user" element={<UserProtectedRoutes />}>
             <Route path='profile' element={<Profile />} />
             <Route path='' element={<Dashboard />} />
