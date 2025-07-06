@@ -22,6 +22,7 @@ import AddBooking from './pages/UserRoutes.jsx/AddBooking.jsx'
 import ViewBookings from './pages/UserRoutes.jsx/ViewBookings.jsx'
 import UserProvider from './components/Context/UserContext.jsx'
 import AddPortfolio from './pages/AddPortfolio.jsx'
+import Contact from './pages/Contact.jsx'
 
 const GoogleWrapper = () => {
   return (
@@ -42,8 +43,9 @@ createRoot(document.getElementById('root')).render(
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<GoogleWrapper />} />
-          <Route path="/signup" element={<Signup/>} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/addcategory" element={<AddCategory />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/category" element={<Category />} />
           <Route path="/category/:cName" element={<CategoryDetails />} />
           <Route path="/addportfolio" element={<AddPortfolio />} />
@@ -51,6 +53,7 @@ createRoot(document.getElementById('root')).render(
             <Route path='profile' element={<Profile />} />
             <Route path='' element={<Dashboard />} />
             <Route path='addbooking' element={<AddBooking />} />
+            <Route path="contact" element={<Contact />} />
             <Route path='viewbookings' element={<ViewBookings />} />
             <Route path='category' element={<Category />} />
             <Route path="category/:cName" element={<CategoryDetails />} />

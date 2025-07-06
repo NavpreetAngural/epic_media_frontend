@@ -34,7 +34,7 @@ const Navbar = () => {
           <li><Link to="category" onClick={toggleMenu}>Categories</Link></li>
           <li><NavLink to="addbooking">Add Booking</NavLink></li>
           <li><NavLink to="viewbookings">My Bookings</NavLink></li>
-          <li><Link to="/contact" onClick={toggleMenu}>Contact</Link></li>
+          <li><Link to="contact" onClick={toggleMenu}>Contact</Link></li>
         </ul>
 
         {/* Desktop "Book Now" */}
