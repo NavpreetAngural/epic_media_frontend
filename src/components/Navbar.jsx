@@ -14,11 +14,11 @@ const Navbar = () => {
       <div className='flex items-center justify-between p-4'>
         {/* Logo */}
         <Link to="/">
-        <img
-          className='h-10 w-10 rounded-full sm:h-16 sm:w-16'
-          src={logo}
-          alt="Logo"
-        />
+          <img
+            className='h-10 w-10 rounded-full sm:h-16 sm:w-16'
+            src={logo}
+            alt="Logo"
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -53,9 +53,9 @@ const Navbar = () => {
           <ul className='flex flex-col gap-4 text-center'>
             <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
             <li><Link to="/portfolio" onClick={toggleMenu}>Portfolio</Link></li>
+            <li><NavLink to="/category">Category</NavLink></li>
             <li><Link to="/about" onClick={toggleMenu}>About</Link></li>
             <li><Link to="/blog" onClick={toggleMenu}>Blog</Link></li>
-            <li><Link to="/testimonials" onClick={toggleMenu}>Testimonials</Link></li>
             <li><Link to="/contact" onClick={toggleMenu}>Contact</Link></li>
           </ul>
           <Link
