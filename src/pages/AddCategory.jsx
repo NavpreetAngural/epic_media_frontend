@@ -51,7 +51,7 @@ const AddCategory = () => {
                     <h1 className='text-2xl font-bold pb-5 '>Add Categiry</h1>
                     <Form
                         name="addCategory"
-                        labelCol={{ span: 8 }}
+                        labelCol={{ span: 10 }}
                         wrapperCol={{ span: 16 }}
                         style={{ maxWidth: 600, width: "100%" }}
                         onFinish={onFinish}

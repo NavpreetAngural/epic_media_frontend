@@ -53,7 +53,7 @@ const AddPortfolio = () => {
                     <Form
                         className=' w-full '
                         name="basic"
-                        labelCol={{ span: 8 }}
+                        labelCol={{ span: 10 }}
                         wrapperCol={{ span: 16 }}
                         style={{ maxWidth: 600 }}
                         initialValues={{ remember: true }}

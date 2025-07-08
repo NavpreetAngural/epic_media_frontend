@@ -23,6 +23,7 @@ import ViewBookings from './pages/UserRoutes.jsx/ViewBookings.jsx'
 import UserProvider from './components/Context/UserContext.jsx'
 import AddPortfolio from './pages/AddPortfolio.jsx'
 import Contact from './pages/Contact.jsx'
+import ScrollToTop from './components/ScrollToTop.jsx'
 
 const GoogleWrapper = () => {
   return (
@@ -35,8 +36,9 @@ const GoogleWrapper = () => {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
-      <ToastContainer />
+      <ToastContainer className="w-auto"/>
       <UserProvider>
+        <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
