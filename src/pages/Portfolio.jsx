@@ -36,7 +36,7 @@ const Portfolio = () => {
                               className={`${img.orientation === 'portrait' ? 'lg:row-span-2' : ''}`}
                          >
                               <img
-                                   src={`http://localhost:3000/uploads/${img.image}`}
+                                   src={`https://epic-media-backend.onrender.com/uploads/${img.image}`}
                                    alt=""
                                    className="w-full h-auto object-cover"
                               />

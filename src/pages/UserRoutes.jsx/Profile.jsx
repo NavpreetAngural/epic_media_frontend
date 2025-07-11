@@ -25,7 +25,7 @@ const Profile = () => {
                         src={
                             user.dp.startsWith("http")
                                 ? `${user.dp}`  // Full URL from Google (e.g. https://...)
-                                : `http://localhost:3000/uploads/${user.dp}`  // Local image from your server
+                                : `https://epic-media-backend.onrender.com/uploads/${user.dp}`  // Local image from your server
                         } />
                 }
                 actions={[

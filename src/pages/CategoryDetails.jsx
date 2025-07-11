@@ -33,7 +33,7 @@ const CategoryDetails = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
           {data.map((item, index) => {
-            const mediaURL = `http://localhost:3000/uploads/${item.media}`;
+            const mediaURL = `https://epic-media-backend.onrender.com/uploads/${item.media}`;
             const isVideo = /\.(mp4|mov|avi|webm)$/i.test(item.media);
 
             return (
