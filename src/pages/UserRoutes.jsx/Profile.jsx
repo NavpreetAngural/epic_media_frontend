@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 import { Avatar, Button, Card } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import { baseURL } from '../../../config';
 const { Meta } = Card;
 
 const Profile = () => {
@@ -22,11 +23,8 @@ const Profile = () => {
                 cover={
                     <img
                         alt="example"
-                        src={
-                            user.dp.startsWith("http")
-                                ? `${user.dp}`  // Full URL from Google (e.g. https://...)
-                                : `https://epic-media-backend.onrender.com/uploads/${user.dp}`  // Local image from your server
-                        } />
+                        src={user.url}
+                         />
                 }
                 actions={[
                     <EditOutlined key="edit" />,

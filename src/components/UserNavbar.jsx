@@ -8,12 +8,6 @@ const Navbar = () => {
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   const user = JSON.parse(localStorage.getItem("user"));
-  const getDpUrl = (dp) => {
-    if (!dp) return "https://via.placeholder.com/150";
-    return dp.startsWith("http")
-      ? dp
-      : `https://epic-media-backend.onrender.com/uploads/${dp}`;
-  };
 
   return (
     <div className='navbar '>
@@ -43,7 +37,7 @@ const Navbar = () => {
           className=' hidden md:inline-block text-black  font-normal border-3 border-white rounded-full hover:text-[#F25F4F] hover:border-3 hover:border-[#F25F4F]  '
         >
           <img
-            src={getDpUrl(user?.dp)}
+            src={user.url}
             alt="User DP"
             className="h-16 w-16 rounded-full object-cover"
           />
@@ -73,7 +67,7 @@ const Navbar = () => {
             onClick={toggleMenu}
           >
             <img
-              src={getDpUrl(user?.dp)}
+              src={user.url}
               alt="User DP"
               className="h-16 w-16 rounded-full object-cover"
             />
