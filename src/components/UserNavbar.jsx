@@ -31,10 +31,10 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <ul className='navlist hidden md:flex gap-10 items-center  ml-[25em]'>
           <li><NavLink to="" >Dashboard</NavLink></li>
-          <li><Link to="category" onClick={toggleMenu}>Categories</Link></li>
+          <li><NavLink to="category" onClick={toggleMenu}>Categories</NavLink></li>
           <li><NavLink to="addbooking">Add Booking</NavLink></li>
           <li><NavLink to="viewbookings">My Bookings</NavLink></li>
-          <li><Link to="contact" onClick={toggleMenu}>Contact</Link></li>
+          <li><NavLink to="contact" onClick={toggleMenu}>Contact</NavLink></li>
         </ul>
 
         {/* Desktop "Book Now" */}
@@ -61,10 +61,10 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className=' md:hidden flex flex-col items-center gap-4 pb-4'>
           <ul className='flex flex-col gap-4 text-center'>
-            <li><Link to="dashboard" onClick={toggleMenu}>Dashboard</Link></li>
+            <li><Link to="" onClick={toggleMenu}>Dashboard</Link></li>
             <li><Link to="category" onClick={toggleMenu}>Categories</Link></li>
             <li><Link to="addbooking" onClick={toggleMenu}>Add Booking</Link></li>
-            <li><Link to="viewbookigs" onClick={toggleMenu}>My Bookings</Link></li>
+          <li><NavLink to="viewbookings">My Bookings</NavLink></li>
             <li><Link to="contact" onClick={toggleMenu}>Contact</Link></li>
           </ul>
           <Link
