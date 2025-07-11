@@ -21,7 +21,7 @@ const Portfolio = () => {
 
      useEffect(() => {
           fetchData()
-     },)
+     },[])
 
      return (
           <>
