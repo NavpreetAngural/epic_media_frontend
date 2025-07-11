@@ -12,7 +12,7 @@ const Navbar = () => {
     if (!dp) return "https://via.placeholder.com/150";
     return dp.startsWith("http")
       ? dp
-      : `http://localhost:3000/uploads/${dp}`;
+      : `https://epic-media-backend.onrender.com/uploads/${dp}`;
   };
 
   return (

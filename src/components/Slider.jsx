@@ -34,7 +34,7 @@ const Slider = () => {
         <div className='flex flex-col justify-center'>
             <div className='slider group relative w-full h-[15em] lg:h-[35em] overflow-hidden mx-auto'>
                 {data.map((item, index) => {
-                    const mediaURL = `http://localhost:3000/uploads/${item.media}`;
+                    const mediaURL = `https://epic-media-backend.onrender.com/uploads/${item.media}`;
                     const isVideo = /\.(mp4|mov|avi|webm)$/i.test(item.media); // detect video
 
                     return (
