@@ -33,7 +33,7 @@ const CategoryDetails = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
           {data.map((item, index) => {
-            const mediaURL = `${baseURL}/${item.url}`;
+            const mediaURL = `${item.url}`;
             const isVideo = /\.(mp4|mov|avi|webm)$/i.test(item.url);
 
             return (

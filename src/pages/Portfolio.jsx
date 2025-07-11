@@ -36,7 +36,7 @@ const Portfolio = () => {
                               className={`${img.orientation === 'portrait' ? 'lg:row-span-2' : ''}`}
                          >
                               <img
-                                   src={`${baseURL}/${img.url}`}
+                                   src={`${img.url}`}
                                    alt=""
                                    className="w-full h-auto object-cover"
                               />
