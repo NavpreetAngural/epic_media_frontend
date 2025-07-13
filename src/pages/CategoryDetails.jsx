@@ -39,8 +39,7 @@ const CategoryDetails = () => {
             return (
               <div
                 key={index}
-                className="flex flex-col w-full h-auto rounded overflow-hidden shadow-md"
-              >
+                className={`${item.orientation === 'portrait' ? 'aspect-[3/4]' : 'aspect-video'}w-full object-cover rounded-xl`}>
                 <div className="w-full h-[200px] lg:h-[300px]">
                   {isVideo ? (
                     <video

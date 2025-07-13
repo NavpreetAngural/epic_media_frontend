@@ -19,7 +19,7 @@ const Category = () => {
   const Categories = [
     { cName: "Travel", image: travel },
     { cName: "Pre Wedding", image: pre_wedding_thumbnail },
-    { cName: "Behid The Scene", image: BTS },
+    { cName: "Behind The Scene", image: BTS },
     { cName: "Short Movies", image: short_movie },
     { cName: "Feature Films", image: movie },
     { cName: "Songs", image: songs },
