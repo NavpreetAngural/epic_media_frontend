@@ -21,7 +21,7 @@ const Portfolio = () => {
 
      useEffect(() => {
           fetchData()
-     },[])
+     }, [])
 
      return (
           <>
@@ -33,8 +33,10 @@ const Portfolio = () => {
                     {data.map((img, index) => (
                          <div
                               key={index}
-                              className={`${img.orientation === 'portrait' ? 'lg:row-span-2' : ''}`}
-                         >
+                              className={`
+  ${img.orientation === 'portrait' ? 'aspect-[3/4]' : 'aspect-video'}
+  w-full object-cover rounded-xl
+`}                         >
                               <img
                                    src={`${img.url}`}
                                    alt=""

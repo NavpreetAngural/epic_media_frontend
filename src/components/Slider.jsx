@@ -10,7 +10,8 @@ const Slider = () => {
     const images_data = async () => {
         try {
             const res = await axios.get(`${baseURL}/portfolio/view`);
-            setData(res.data.data);
+            const filtered = res.data.data.filter(item => item.orientation === 'landscape');
+            setData(filtered);
         } catch (err) {
             console.log("Error fetching images", err);
         }
