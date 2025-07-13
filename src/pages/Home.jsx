@@ -10,8 +10,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
-import pre_wedding_thumbnail from '../assets/images/pre_wedding_thumbnail.jpg'
-import short_movie from '../assets/images/short_movie.jpg'
+import movie from '../assets/images/movie.jpg'
+import songs from '../assets/images/songs.jpg'
 import travel from '../assets/images/travel.jpg'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -24,8 +24,8 @@ const Home = () => {
 
   }, [])
   const card_images = [
-    { title: "Pre Wedding", image: pre_wedding_thumbnail },
-    { title: "Short Movies", image: short_movie },
+    { title: "Movies", image: movie },
+    { title: "Music Videos", image: songs },
     { title: "Travel", image: travel },
   ]
 
@@ -85,10 +85,10 @@ const Home = () => {
         <h2 className="text-2xl font-semibold text-center mb-6">
           <i>Featured Categories</i>
         </h2>
-        <div className="flex flex-wrap flex-col md:flex-row justify-center items-center gap-5 lg:gap-[80px] ">
+        <div className="flex flex-wrap flex-col md:flex-row justify-center items-center gap-5 lg:gap-[80px]  ">
           {card_images.map((item, index) => (
             <Link to={`/category/${item.title}`}>
-              <Card data-aos="zoom-in" key={index} sx={{ maxWidth: 300, maxHeight: 350 }}>
+              <Card data-aos="zoom-in" key={index} sx={{ maxWidth: 400, maxHeight: 400 }}>
                 <CardActionArea>
                   <CardMedia
                     component="img"
@@ -101,10 +101,10 @@ const Home = () => {
                     }}
                   />
                   <CardContent>
-                    <Typography gutterBottom variant="h6" component="div">
+                    <Typography gutterBottom variant="h6" component="div" className='text-center'>
                       {item.title}
                     </Typography>
-                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                    <Typography variant="body2" sx={{ color: 'text.secondary' }} className='text-center'>
                       Explore our {item.title.toLowerCase()} collection.
                     </Typography>
                   </CardContent>

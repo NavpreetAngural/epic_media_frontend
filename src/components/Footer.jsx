@@ -12,11 +12,11 @@ const Footer = () => {
                 alt="Logo"
             />
             <ul className='footer-nav flex gap-3 lg:flex lg:w-full justify-evenly p-3 lg:pb-0  '>
-                 <li><Link to="/portfolio" >Portfolio</Link></li>
-                 <li><Link to="/blog">Blog</Link></li>
-                  <li><Link to="/about">About</Link></li>
-                 <li><Link to="">Contact</Link></li>
-                 <li><Link to="/login">Book Now</Link></li>
+                <li><Link to="/portfolio" >Portfolio</Link></li>
+                <li><Link to="/blog">Blog</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="">Contact</Link></li>
+                <li><Link to="/login">Book Now</Link></li>
             </ul>
             <div className='flex flex-col justify-center items-center lg:flex lg:flex-row  w-full pt-5 gap-5' >
                 <div className='w-1/2 flex flex-col justify-center items-center gap-3'>
@@ -38,15 +38,17 @@ const Footer = () => {
                     <div className='w-1/2 flex flex-col justify-center items-center lg:items-start  lg:justify-start gap-5 p-2 '>
                         <div className='flex gap-3 items-center justify-center'>
                             <i className="ri-mail-line text-xl text-blue-600 " ></i>
-                            <Link className='active:underline'>epicmedia@gmail.com</Link>
+                            <a href="mailto:justclip12@gmail.com" className="hover:underline">
+                                justclip12@gmail.com
+                            </a>
                         </div>
                         <div className='flex gap-3 items-center justify-center w-[200px] lg:w-auto lg:m-0 mr-[50px]'>
                             <i className="ri-phone-line text-xl text-blue-600 " ></i>
-                            <Link className='active:underline'>+91 7986990209</Link>
+                            <Link className='active:underline'>+91 7986990209 , +91 8427126663</Link>
                         </div>
-                        <div className='flex gap-3 items-center justify-center w-[200px] lg:w-[500px]'>
+                        <div className='flex gap-3 items-center justify-center w-[200px] lg:w-auto lg:m-0 mr-[50px]'>
                             <i className="ri-home-3-line text-xl text-blue-600 " ></i>
-                            <p >H No. 739 New Chandigarh Mohalla , Basti Danishmandan , Jalandhar Punjab India , 144002</p>
+                            <p >Jalandhar , Mohali</p>
                         </div>
                     </div>
                 </div>
