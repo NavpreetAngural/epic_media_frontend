@@ -9,7 +9,7 @@ const Slider = () => {
 
     const images_data = async () => {
         try {
-            const res = await axios.get(`${baseURL}/category/view`);
+            const res = await axios.get(`${baseURL}/portfolio/view`);
             setData(res.data.data);
         } catch (err) {
             console.log("Error fetching images", err);
@@ -35,7 +35,6 @@ const Slider = () => {
             <div className='slider group relative w-full h-[15em] lg:h-[35em] overflow-hidden mx-auto'>
                 {data.map((item, index) => {
                     const mediaURL = `${item.url}`;
-                    const isVideo = /\.(mp4|mov|avi|webm)$/i.test(item.url); // detect video
 
                     return (
                         <div
