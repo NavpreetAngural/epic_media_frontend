@@ -35,6 +35,7 @@ const Slider = () => {
             <div className='slider group relative w-full h-[15em] lg:h-[35em] overflow-hidden mx-auto'>
                 {data.map((item, index) => {
                     const mediaURL = `${item.url}`;
+                    const isVideo = /\.(mp4|mov|avi|webm)$/i.test(item.url); // detect video
 
                     return (
                         <div
