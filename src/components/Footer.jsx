@@ -5,7 +5,7 @@ import 'remixicon/fonts/remixicon.css';
 
 const Footer = () => {
     return (
-        <div className='flex flex-col p-5 h-[auto] justify-center items-center w-full lg:flex lg:flex-col lg:h-[20em] border-t  lg:mt-3'>
+        <div className='flex flex-col p-5 h-[auto] justify-center items-center w-full lg:flex lg:flex-col lg:h-[18em] border-t  '>
             <img
                 className='h-10 w-10 rounded-full sm:h-16 sm:w-16'
                 src="https://yt3.ggpht.com/4JMMd27NA9eqpHEGx0rT0QTFel0223bWGn7doCnLwHNUA4pn1n3viY3WBXPzjEsaf9NOYamiXQ=s176-c-k-c0x00ffffff-no-rj-mo"

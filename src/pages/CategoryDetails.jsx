@@ -26,47 +26,48 @@ const CategoryDetails = () => {
   return (
     <>
       {token ? "" : <Navbar />}
-      <div className='about flex flex-col mb-10 px-4'>
+      <div className='category flex flex-col mb-10 px-4'>
         <div className='heading w-full flex justify-center items-center h-[10em] border-y lg:border-0 mt-5'>
           <h1 className='text-3xl lg:text-5xl'><i>Gallery of {cName}</i></h1>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
-          {data.map((item, index) => {
-            const mediaURL = `${item.url}`;
-            const isVideo = /\.(mp4|mov|avi|webm)$/i.test(item.url);
+        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 px-5 mb-5">
+  {data.map((item, index) => {
+    const mediaURL = item.url;
+    const isVideo = /\.(mp4|mov|avi|webm)$/i.test(mediaURL);
 
-            return (
-              <div
-                key={index}
-                className={`${item.orientation === 'portrait' ? 'aspect-[3/4]' : 'aspect-video'}w-full object-cover rounded-xl`}>
-                <div className="w-full h-[200px] lg:h-[300px]">
-                  {isVideo ? (
-                    <video
-                      src={mediaURL}
-                      className="w-full h-full object-cover"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                    />
-                  ) : (
-                    <img
-                      src={mediaURL}
-                      alt={`Media ${index}`}
-                      className="w-full h-full object-cover"
-                    />
-                  )}
-                </div>
-                <div className="p-2 bg-gray-100 text-xl  text-center">
-                  {item.description}
-                </div>
-              </div>
-            );
-          })}
-
-
+    return (
+      <div
+        key={index}
+        className="mb-4 break-inside-avoid overflow-hidden rounded-xl shadow bg-white"
+      >
+        <a href={mediaURL} target="_blank" rel="noopener noreferrer">
+          {isVideo ? (
+            <video
+              src={mediaURL}
+              className="w-full h-auto object-cover rounded"
+              muted
+              loop
+              playsInline
+              controls
+            />
+          ) : (
+            <img
+              src={mediaURL}
+              alt={`Media ${index}`}
+              className="w-full h-auto object-cover rounded transition duration-300 ease-in-out hover:scale-105"
+            />
+          )}
+        </a>
+        <div className="p-2 bg-gray-100 text-center text-sm font-medium">
+          {item.description}
         </div>
+      </div>
+    );
+  })}
+</div>
+
+
       </div>
       <Footer />
     </>

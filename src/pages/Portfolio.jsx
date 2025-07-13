@@ -26,21 +26,32 @@ const Portfolio = () => {
      return (
           <>
                <Navbar />
-               <div className='heading w-full md:w-full flex justify-center items-center h-[5em] lg:h-[10em] ' >
-                    <h1 className='md:text-5xl text-4xl'><i>Portfolio</i></h1>
-               </div>
-               <div className="portfolio grid grid-cols-1 lg:grid-cols-3 gap-3 w-full lg:p-[50px] p-5 lg:pt-4 m-auto">
-                    {data.map((img, index) => (
-                         <div
-                              key={index}
-                              className={`${img.orientation === 'portrait' ? 'aspect-[3/4]' : 'aspect-video'}w-full object-cover rounded-xl`}                         >
-                              <img
-                                   src={`${img.url}`}
-                                   alt=""
-                                   className="w-full h-auto object-cover"
-                              />
-                         </div>
-                    ))}
+               <div className='category flex flex-col  mb-5'>
+                    <div className='heading w-full md:w-full flex justify-center items-center h-[5em] lg:h-[10em] mb-5' >
+                         <h1 className='md:text-5xl text-4xl'><i>Portfolio</i></h1>
+                    </div>
+                    <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 px-5 mb-5">
+                         {data.map((img, index) => (
+                              <div
+                                   key={index}
+                                   className={`mb-4 break-inside-avoid overflow-hidden rounded-xl shadow bg-white 
+        ${img.orientation === 'landscape' ? 'aspect-[16/10]' : ''}`}
+                              >
+                                   <a href={img.url} target="_blank" rel="noopener noreferrer">
+                                        <img
+                                             src={img.url}
+                                             alt=""
+                                             className={`w-full h-full rounded transition duration-300 ease-in-out 
+            hover:scale-105
+            ${img.orientation === 'landscape' ? 'scale-y-[1]' : ''}`}
+                                        />
+                                   </a>
+                              </div>
+                         ))}
+                    </div>
+
+
+
                </div>
 
 

@@ -25,18 +25,17 @@ const Category = () => {
     { cName: "Songs", image: songs },
     { cName: "Talk Shows", image: talk_show },
     { cName: "Product Shoot", image: product_shoot },
-    // { type: "", image: modified },
   ];
 
 
   return (
     <>
       {token ? "" : <Navbar />}
-      <div className='about flex flex-col mb-5'>
-        <div className='heading w-full md:w-full flex justify-center items-center h-[10em] lg:h-[10em] border-y lg:border-0 lg:m-0 mt-5' >
-          <h1 className='lg:text-5xl text-4xl'><b>Categories</b></h1>
-        </div>
-        <div className=' flex flex-col gap-5 lg:flex-row lg:gap-10 flex-wrap justify-evenly'>
+      <div className='category flex flex-col mb-5'>
+        <div className='heading w-full md:w-full flex justify-center items-center h-[5em] lg:h-[10em] ' >
+                <h1 className='md:text-5xl text-4xl'><i>All Categories </i></h1>
+            </div>
+        <div className=' flex flex-col gap-5 lg:flex-row lg:gap-10 flex-wrap justify-evenly lg-my-5'>
           {Categories.map((data, i) => (
             <div className='flex flex-col justify-center items-center shadow-lg pb-3 '>
               <div className="mb-2 max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700">
