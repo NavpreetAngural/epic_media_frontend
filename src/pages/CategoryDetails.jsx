@@ -26,12 +26,12 @@ const CategoryDetails = () => {
   return (
     <>
       {token ? "" : <Navbar />}
-      <div className='category flex flex-col mb-10 px-4'>
-        <div className='heading w-full flex justify-center items-center h-[10em] border-y lg:border-0 mt-5'>
+      <div className='category flex flex-col  px-4 mb-5'>
+        <div className='heading w-full flex justify-center items-center h-[10em] border-y lg:border-0 my-5'>
           <h1 className='text-3xl lg:text-5xl'><i>Gallery of {cName}</i></h1>
         </div>
 
-        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 px-5 mb-5">
+        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 px-5 my-5">
   {data.map((item, index) => {
     const mediaURL = item.url;
     const isVideo = /\.(mp4|mov|avi|webm)$/i.test(mediaURL);

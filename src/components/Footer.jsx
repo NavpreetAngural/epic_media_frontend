@@ -1,17 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import 'remixicon/fonts/remixicon.css';
+import logo from '../assets/images/logo.jpg'
+
 
 
 const Footer = () => {
     return (
-        <div className='flex flex-col p-5 h-[auto] justify-center items-center w-full lg:flex lg:flex-col lg:h-[18em] border-t  '>
+        <div className='flex flex-col p-5 h-[auto] justify-center items-center w-full lg:flex lg:flex-col lg:h-[18em] border-t  mb-5'>
             <img
                 className='h-10 w-10 rounded-full sm:h-16 sm:w-16'
-                src="https://yt3.ggpht.com/4JMMd27NA9eqpHEGx0rT0QTFel0223bWGn7doCnLwHNUA4pn1n3viY3WBXPzjEsaf9NOYamiXQ=s176-c-k-c0x00ffffff-no-rj-mo"
+                src={logo}
                 alt="Logo"
             />
-            <ul className='footer-nav flex gap-3 lg:flex lg:w-full justify-evenly p-3 lg:pb-0  '>
+            <ul className='footer-nav flex gap-2 lg:flex lg:w-full justify-evenly pt-5 lg:pb-0  '>
                 <li><Link to="/portfolio" >Portfolio</Link></li>
                 <li><Link to="/blog">Blog</Link></li>
                 <li><Link to="/about">About</Link></li>
@@ -28,9 +30,6 @@ const Footer = () => {
                         <Link className='hover:scale-110' to="https://www.youtube.com/@epicmedia501">
                             <i className="ri-youtube-line text-white bg-red-500 text-3xl rounded-full"></i>
                         </Link>
-                        <Link className='hover:scale-110 ' to="https://www.facebook.com/nitpreet.angural.2025">
-                            <i className="ri-facebook-line bg-blue-500 text-white text-3xl rounded-full"></i>
-                        </Link>
                     </div>
                 </div>
                 <div className='w-1/2 flex flex-col items-center justify-center lg:justify-start gap-1 '>
@@ -42,9 +41,14 @@ const Footer = () => {
                                 justclip12@gmail.com
                             </a>
                         </div>
-                        <div className='flex gap-3 items-center justify-center w-[200px] lg:w-auto lg:m-0 mr-[50px]'>
+                        <div className='flex gap-3 items-center justify-center w-[100px] lg:w-auto lg:m-0 mr-[50px]'>
                             <i className="ri-phone-line text-xl text-blue-600 " ></i>
-                            <Link className='active:underline'>+91 7986990209 , +91 8427126663</Link>
+                            <a href="tel:+917986990209" className="hover:underline text-blue-700">
+                                +91 7986990209
+                            </a>
+                            <a href="tel:+918427126663" className="hover:underline text-blue-700">
+                                +91 8427126663
+                            </a>
                         </div>
                         <div className='flex gap-3 items-center justify-center w-[200px] lg:w-auto lg:m-0 mr-[50px]'>
                             <i className="ri-home-3-line text-xl text-blue-600 " ></i>

@@ -32,7 +32,7 @@ const Category = () => {
     <>
       {token ? "" : <Navbar />}
       <div className='category flex flex-col mb-5'>
-        <div className='heading w-full md:w-full flex justify-center items-center h-[5em] lg:h-[10em] ' >
+        <div className='heading w-full md:w-full flex justify-center items-center border-y lg:border-0 h-[10em] lg:h-[10em] my-5' >
                 <h1 className='md:text-5xl text-4xl'><i>All Categories </i></h1>
             </div>
         <div className=' flex flex-col gap-5 lg:flex-row lg:gap-10 flex-wrap justify-evenly lg-my-5'>

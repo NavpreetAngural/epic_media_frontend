@@ -33,6 +33,7 @@ const Slider = () => {
 
     return (
         <div className='flex flex-col justify-center'>
+
             <div className='slider group relative w-full h-[15em] lg:h-[35em] overflow-hidden mx-auto'>
                 {data.map((item, index) => {
                     const mediaURL = `${item.url}`;
@@ -44,23 +45,25 @@ const Slider = () => {
                             className={`absolute w-full h-full transition-opacity duration-1000 ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0'
                                 }`}
                         >
-                            {isVideo ? (
-                                <video
-                                    src={mediaURL}
-                                    className="w-full h-full object-cover"
-                                    autoPlay
-                                    muted
-                                    loop
-                                    playsInline
-                                />
-                            ) : (
-                                <img
-                                    src={mediaURL}
-                                    alt={`Slide ${index}`}
-                                    className="w-full h-full "
-                                    fill
-                                />
-                            )}
+                            <a href={item.url} target='_blank' rel='noopener noreferrer'>
+                                {isVideo ? (
+                                    <video
+                                        src={mediaURL}
+                                        className="w-full h-full object-cover"
+                                        autoPlay
+                                        muted
+                                        loop
+                                        playsInline
+                                    />
+                                ) : (
+                                        <img
+                                            src={mediaURL}
+                                            alt={`Slide ${index}`}
+                                            className="w-full h-full "
+                                        />
+                                )}
+                            </a>
+
                         </div>
                     );
                 })}
