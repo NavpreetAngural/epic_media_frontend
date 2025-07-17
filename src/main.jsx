@@ -23,7 +23,7 @@ import UserProvider from './components/Context/UserContext.jsx'
 import AddPortfolio from './pages/AddPortfolio.jsx'
 import Contact from './pages/Contact.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
-import Signup from './pages/signup.jsx'
+import Signup from './pages/Signup.jsx'
 
 const GoogleWrapper = () => {
   return (
