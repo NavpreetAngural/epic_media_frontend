@@ -9,7 +9,6 @@ import Footer from './components/Footer.jsx'
 import Blog from './pages/Blog.jsx'
 import About from './pages/About.jsx'
 import Login from './pages/Login.jsx'
-import Signup from './pages/Signup.jsx'
 import { ToastContainer } from 'react-toastify'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import Category from './pages/Category.jsx'
@@ -24,6 +23,7 @@ import UserProvider from './components/Context/UserContext.jsx'
 import AddPortfolio from './pages/AddPortfolio.jsx'
 import Contact from './pages/Contact.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
+import Signup from './pages/signup.jsx'
 
 const GoogleWrapper = () => {
   return (

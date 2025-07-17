@@ -5,18 +5,19 @@ import 'remixicon/fonts/remixicon.css';
 
 const UserFooter = () => {
     return (
-        <div className='flex flex-col p-5 h-[auto] justify-center items-center w-full lg:flex lg:flex-col lg:h-[20em] border-t  lg:mt-3'>
-            <img
-                className='h-10 w-10 rounded-full sm:h-16 sm:w-16'
-                src="https://yt3.ggpht.com/4JMMd27NA9eqpHEGx0rT0QTFel0223bWGn7doCnLwHNUA4pn1n3viY3WBXPzjEsaf9NOYamiXQ=s176-c-k-c0x00ffffff-no-rj-mo"
-                alt="Logo"
-            />
+        <div className='flex flex-col p-2 h-[auto] justify-center items-center w-full lg:flex lg:flex-col lg:h-[17em] border-t'>
+            <Link to="/user">
+                <img
+                    className='h-10 w-10 rounded-full sm:h-16 sm:w-16'
+                    src="https://yt3.ggpht.com/4JMMd27NA9eqpHEGx0rT0QTFel0223bWGn7doCnLwHNUA4pn1n3viY3WBXPzjEsaf9NOYamiXQ=s176-c-k-c0x00ffffff-no-rj-mo"
+                    alt="Logo"
+                />
+            </Link>
             <ul className='footer-nav flex gap-3 lg:flex lg:w-full justify-evenly p-3 lg:pb-0  '>
-                <li><Link to="/portfolio" >Portfolio</Link></li>
-                <li><Link to="/blog">Blog</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="">Contact</Link></li>
-                <li><Link to="/login">Book Now</Link></li>
+                <li><Link to="category">Categories</Link></li>
+                <li><Link to="addbooking">Book Now</Link></li>
+                <li><Link to="viewbookings">My Bookings</Link></li>
+                <li><Link to="contact">Contact Page</Link></li>
             </ul>
             <div className='flex flex-col justify-center items-center lg:flex lg:flex-row  w-full pt-5 gap-5' >
                 <div className='w-1/2 flex flex-col justify-center items-center gap-3'>
@@ -39,17 +40,16 @@ const UserFooter = () => {
                                 justclip12@gmail.com
                             </a>
                         </div>
-                        <div className='flex gap-3 items-center justify-center w-[200px] lg:w-auto lg:m-0 mr-[50px]'>
-                                <i className="fa-solid fa-phone mr-2 text-green-600"></i>
-                                <a href="tel:+917986990209" className="hover:underline text-blue-700">
-                                    +91 7986990209
-                                </a>
-                                <span className="hidden sm:inline">,</span>
-                                <a href="tel:+918427126663" className="hover:underline text-blue-700">
-                                    +91 8427126663
-                                </a>
+                        <div className='flex gap-3 items-center justify-center w-[100px] lg:w-auto lg:m-0 mr-[50px]'>
+                            <i className="ri-phone-line text-xl text-blue-600 " ></i>
+                            <a href="tel:+917986990209" className="hover:underline text-blue-700">
+                                +91 7986990209
+                            </a>
+                            <a href="tel:+918427126663" className="hover:underline text-blue-700">
+                                +91 8427126663
+                            </a>
                         </div>
-                        <div className='flex gap-3 items-center justify-center w-[200px] lg:w-[500px]'>
+                        <div className='flex gap-3 items-center justify-center w-[200px] lg:w-auto lg:m-0 mr-[50px]'>
                             <i className="ri-home-3-line text-xl text-blue-600 " ></i>
                             <p >Jalandhar , Mohali</p>
                         </div>

@@ -26,11 +26,11 @@ const Portfolio = () => {
      return (
           <>
                <Navbar />
-               <div className='category flex flex-col  mb-5'>
-                    <div className='heading w-full md:w-full flex justify-center items-center h-[5em] lg:h-[10em] mb-5' >
+               <div className='category flex flex-col  my-5'>
+                    <div className='heading w-full md:w-full flex justify-center items-center border-y lg:border-0 h-[10em] ' >
                          <h1 className='md:text-5xl text-4xl'><i>Portfolio</i></h1>
                     </div>
-                    <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 px-5 mb-5">
+                    <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 px-5 my-5">
                          {data.map((img, index) => (
                               <div
                                    key={index}

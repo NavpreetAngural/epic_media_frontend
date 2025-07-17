@@ -14,7 +14,7 @@ const Navbar = () => {
       {/* Top Row */}
       <div className='flex items-center justify-between p-4'>
         {/* Logo */}
-        <Link to="/">
+        <Link to="/user">
           <img
             className='h-10 w-10 rounded-full sm:h-16 sm:w-16'
             src={logo}

@@ -6,7 +6,7 @@ const Blog = () => {
     return (
         <>
         <Navbar/>
-        <div className='blog lg:flex lg:flex-col lg:gap-y-[50px]'>
+        <div className='blog lg:flex lg:flex-col lg:gap-y-[50px] my-5'>
             <div className='heading w-full md:w-full flex justify-center items-center h-[10em] lg:h-[10em] border-y lg:border-0 ' >
                 <h1 className='lg:text-5xl text-4xl'><i>Blog</i></h1>
             </div>

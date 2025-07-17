@@ -8,16 +8,19 @@ import logo from '../assets/images/logo.jpg'
 const Footer = () => {
     return (
         <div className='flex flex-col p-5 h-[auto] justify-center items-center w-full lg:flex lg:flex-col lg:h-[18em] border-t  mb-5'>
-            <img
-                className='h-10 w-10 rounded-full sm:h-16 sm:w-16'
-                src={logo}
-                alt="Logo"
-            />
+
+            <Link to="/">
+                <img
+                    className='h-10 w-10 rounded-full sm:h-16 sm:w-16'
+                    src={logo}
+                    alt="Logo"
+                />
+            </Link>
             <ul className='footer-nav flex gap-2 lg:flex lg:w-full justify-evenly pt-5 lg:pb-0  '>
                 <li><Link to="/portfolio" >Portfolio</Link></li>
                 <li><Link to="/blog">Blog</Link></li>
                 <li><Link to="/about">About</Link></li>
-                <li><Link to="">Contact</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
                 <li><Link to="/login">Book Now</Link></li>
             </ul>
             <div className='flex flex-col justify-center items-center lg:flex lg:flex-row  w-full pt-5 gap-5' >
